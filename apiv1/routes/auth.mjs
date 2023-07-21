@@ -2,7 +2,7 @@
 import express from 'express'
 let router = express.Router()
 
-router.get('/login', (req, res) => {
+router.get('/login', (req, res, next) => {
     console.log('this is login', new Date());
     res.send(`<!DOCTYPE html>
     <html lang="en">
@@ -14,22 +14,14 @@ router.get('/login', (req, res) => {
     <body>
         <h1>Welcome to login page</h1>
     </body>
-    </html>`);
+    </html>`)
   })
   
   
-  router.get('/api/v1/signup', (req, res) => {
+  router.get('/signup', (req, res, next) => {
     console.log('this is SignUp !', new Date());
     res.send('this is SignUp' + new Date());
   })
 
   export default router
 
-// import express from 'express'
-// let router = express.Router()
-
-
-// router.get('/login', (req, res, nextt)=>{
-//     console.log("login");
-//     res.send("hello world");
-// })
